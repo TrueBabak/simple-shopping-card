@@ -20,11 +20,17 @@ const Product = ({ name, price, quantity }) => {
         <input type="text" />
       </div>
       <div className="w-1/12 m-1 flex">
-        <button>+</button>
-        <button>-</button>
+        <div className="w-7 h-7 rounded-lg border bg-[#7c6328] border-[#735F32] text-[#C69749] flex items-center justify-center mx-1">
+          -
+        </div>
+        <div className="w-7 h-7 rounded-lg border bg-[#ac8938] border-[#735F32] text-[#ffc261] flex items-center justify-center mx-1">
+          +
+        </div>
       </div>
-      <div className="w-1/12 m-1 flex">
-        <button>Delete!</button>
+      <div className="w-1/12 flex justify-center items-center text-black ">
+        <button className="mx-auto h-7 border text-[#735F32] border-[#C69749] px-2 rounded-lg">
+          Delete!
+        </button>
       </div>
     </div>
   );
