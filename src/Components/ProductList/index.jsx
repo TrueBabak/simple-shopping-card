@@ -16,6 +16,7 @@ const ProductList = () => {
     selectedProduct.quantity++;
     setProducts(TestProducts);
     // selectedProduct.quantity++;
+    console.log(Products.length);
   };
   const decrementHandler = (id) => {
     const customProducts = [...Products];
@@ -39,20 +40,26 @@ const ProductList = () => {
   };
   return (
     <div className="bg-[#735F32] w-3/6 m-auto px-6 py-4 rounded-xl mt-4">
-      {Products.map((product) => (
-        <Product
-          name={product.name}
-          price={product.price}
-          quantity={product.quantity}
-          productId={() => {
-            getId(product.id);
-          }}
-          increment={() => incrementHandler(product.id)}
-          decrement={() => decrementHandler(product.id)}
-          remove={() => removeHandler(product.id)}
-          change={() => changeHandler(product.id)}
-        />
-      ))}
+      {Products.length > 0 ? (
+        Products.map((product) => (
+          <Product
+            name={product.name}
+            price={product.price}
+            quantity={product.quantity}
+            productId={() => {
+              getId(product.id);
+            }}
+            increment={() => incrementHandler(product.id)}
+            decrement={() => decrementHandler(product.id)}
+            remove={() => removeHandler(product.id)}
+            change={() => changeHandler(product.id)}
+          />
+        ))
+      ) : (
+        <div className="text-white text-center text-4xl font-mono underline">
+          Adding item..!
+        </div>
+      )}
     </div>
   );
 };
