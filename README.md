@@ -1,3 +1,11 @@
+<h2 align="center">
+  Portfolio Website - v2.0<br/>
+</h2>
+<div align="center">
+  <img alt="Demo" src="./Images/Shoppingcard-image.png" />
+</div>
+
+<br/>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
