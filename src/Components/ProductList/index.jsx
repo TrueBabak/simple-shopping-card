@@ -8,7 +8,7 @@ const ProductList = () => {
     { name: "Angular js", price: "180$", quantity: 3, id: 3 },
   ]);
   const getId = () => {
-    console.log("ff");
+    // console.log("ff");
   };
   const incrementHandler = (id) => {
     const TestProducts = [...Products];
@@ -16,7 +16,7 @@ const ProductList = () => {
     selectedProduct.quantity++;
     setProducts(TestProducts);
     // selectedProduct.quantity++;
-    console.log(Products.length);
+    // console.log(Products.length);
   };
   const decrementHandler = (id) => {
     const customProducts = [...Products];
@@ -39,7 +39,7 @@ const ProductList = () => {
     const TestProducts = [...Products];
     const selectedProduct = TestProducts.find((p) => p.id === id);
     selectedProduct.name = e.target.value;
-    console.log(selectedProduct);
+    // console.log(selectedProduct);
     setProducts(TestProducts);
   };
   return (
