@@ -19,7 +19,7 @@ const Product = ({
       </div>
       <div className="w-3/12 m-1 flex">
         <p className="px-1">Price: </p>
-        <p className="px-1">{price}</p>
+        <p className="px-1">{price}$</p>
       </div>
       <div className="w-1/12 m-1 flex text-[#C69749]">
         <p className="w-5 h-5 bg-[#735F32] flex justify-center items-center rounded-full p-3">
