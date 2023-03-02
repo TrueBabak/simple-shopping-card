@@ -35,8 +35,12 @@ const ProductList = () => {
     );
     setProducts(filteredProduct);
   };
-  const changeHandler = (id) => {
-    console.log(id);
+  const changeHandler = (id, e) => {
+    const TestProducts = [...Products];
+    const selectedProduct = TestProducts.find((p) => p.id === id);
+    selectedProduct.name = e.target.value;
+    console.log(selectedProduct);
+    setProducts(TestProducts);
   };
   return (
     <div className="bg-[#735F32] w-3/6 m-auto px-6 py-4 rounded-xl mt-4">
@@ -52,7 +56,7 @@ const ProductList = () => {
             increment={() => incrementHandler(product.id)}
             decrement={() => decrementHandler(product.id)}
             remove={() => removeHandler(product.id)}
-            change={() => changeHandler(product.id)}
+            change={(e) => changeHandler(product.id, e)}
           />
         ))
       ) : (
