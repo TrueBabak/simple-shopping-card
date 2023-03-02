@@ -1,4 +1,5 @@
 import React from "react";
+import { BsFillTrashFill } from "react-icons/bs";
 
 const Product = ({
   name,
@@ -7,6 +8,7 @@ const Product = ({
   productId,
   increment,
   decrement,
+  remove,
 }) => {
   return (
     <div className="bg-[#282A3A] m-2 rounded-lg px-6 py-3 text-white flex">
@@ -31,7 +33,7 @@ const Product = ({
           className="w-7 h-7 rounded-lg border bg-[#7c6328] border-[#735F32] text-[#C69749] flex items-center justify-center mx-1"
           onClick={decrement}
         >
-          -
+          {quantity === 1 ? <BsFillTrashFill /> : "-"}
         </div>
         <div
           className="w-7 h-7 rounded-lg border bg-[#ac8938] border-[#735F32] text-[#ffc261] flex items-center justify-center mx-1"
@@ -41,7 +43,10 @@ const Product = ({
         </div>
       </div>
       <div className="w-1/12 flex justify-center items-center text-black ">
-        <button className="mx-auto h-7 border text-[#735F32] border-[#C69749] px-2 rounded-lg">
+        <button
+          className="mx-auto h-7 border text-[#735F32] border-[#C69749] px-2 rounded-lg"
+          onClick={remove}
+        >
           Delete!
         </button>
       </div>

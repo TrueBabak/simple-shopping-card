@@ -7,22 +7,33 @@ const ProductList = () => {
     { name: "Vue js", price: "220$", quantity: 2, id: 2 },
     { name: "Angular js", price: "180$", quantity: 3, id: 3 },
   ]);
-  const getId = (id) => {
-    // console.log(id);
+  const getId = () => {
+    console.log("ff");
   };
   const incrementHandler = (id) => {
     const TestProducts = [...Products];
-    const selectedProduct = TestProducts.find((pro) => pro.id == id);
+    const selectedProduct = TestProducts.find((pro) => pro.id === id);
     selectedProduct.quantity++;
     setProducts(TestProducts);
     // selectedProduct.quantity++;
   };
   const decrementHandler = (id) => {
-    const TestProducts = [...Products];
-    const selectedProduct = TestProducts.find((pro) => pro.id == id);
-    selectedProduct.quantity--;
-    setProducts(TestProducts);
+    const customProducts = [...Products];
+    const selectedProduct = customProducts.find((pro) => pro.id === id);
+    if (selectedProduct.quantity > 1) {
+      selectedProduct.quantity--;
+    } else {
+      selectedProduct.quantity = 0;
+      removeHandler(id);
+    }
+    setProducts(customProducts);
     // selectedProduct.quantity++;
+  };
+  const removeHandler = (productId) => {
+    const filteredProduct = Products.filter(
+      (myProduct) => myProduct.id !== productId
+    );
+    setProducts(filteredProduct);
   };
   return (
     <div className="bg-[#735F32] w-3/6 m-auto px-6 py-4 rounded-xl mt-4">
@@ -36,6 +47,7 @@ const ProductList = () => {
           }}
           increment={() => incrementHandler(product.id)}
           decrement={() => decrementHandler(product.id)}
+          remove={() => removeHandler(product.id)}
         />
       ))}
     </div>
