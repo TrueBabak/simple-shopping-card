@@ -24,16 +24,18 @@ const ProductList = () => {
       selectedProduct.quantity--;
     } else {
       selectedProduct.quantity = 0;
-      removeHandler(id);
+      removeHandler();
     }
     setProducts(customProducts);
-    // selectedProduct.quantity++;
   };
   const removeHandler = (productId) => {
     const filteredProduct = Products.filter(
       (myProduct) => myProduct.id !== productId
     );
     setProducts(filteredProduct);
+  };
+  const changeHandler = (id) => {
+    console.log(id);
   };
   return (
     <div className="bg-[#735F32] w-3/6 m-auto px-6 py-4 rounded-xl mt-4">
@@ -48,6 +50,7 @@ const ProductList = () => {
           increment={() => incrementHandler(product.id)}
           decrement={() => decrementHandler(product.id)}
           remove={() => removeHandler(product.id)}
+          change={() => changeHandler(product.id)}
         />
       ))}
     </div>

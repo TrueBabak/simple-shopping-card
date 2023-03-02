@@ -9,6 +9,7 @@ const Product = ({
   increment,
   decrement,
   remove,
+  change,
 }) => {
   return (
     <div className="bg-[#282A3A] m-2 rounded-lg px-6 py-3 text-white flex">
@@ -26,7 +27,7 @@ const Product = ({
         </p>
       </div>
       <div className="w-3/12 m-1 flex text-black">
-        <input type="text" />
+        <input type="text" onChange={change} />
       </div>
       <div className="w-1/12 m-1 flex">
         <div
