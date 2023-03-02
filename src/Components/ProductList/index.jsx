@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Product from "../Product";
 
-const ProductList = () => {
-  const [Products, setProducts] = useState([
-    { name: "React js", price: "120$", quantity: 1, id: 1 },
-    { name: "Vue js", price: "220$", quantity: 2, id: 2 },
-    { name: "Angular js", price: "180$", quantity: 3, id: 3 },
-  ]);
+const ProductList = ({ Products, setProducts }) => {
   const getId = () => {
     // console.log("ff");
   };

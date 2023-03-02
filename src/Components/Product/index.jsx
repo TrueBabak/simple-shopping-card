@@ -27,14 +27,14 @@ const Product = ({
         </p>
       </div>
       <div className="w-3/12 m-1 flex text-black">
-        <input type="text" onChange={change} />
+        <input type="text" onChange={change} maxLength="10" value={name} />
       </div>
       <div className="w-1/12 m-1 flex">
         <div
           className="w-7 h-7 rounded-lg border bg-[#7c6328] border-[#735F32] text-[#C69749] flex items-center justify-center mx-1"
           onClick={decrement}
         >
-          {quantity === 1 ? <BsFillTrashFill /> : "-"}
+          {quantity === 1 ? <BsFillTrashFill className="text-red-500" /> : "-"}
         </div>
         <div
           className="w-7 h-7 rounded-lg border bg-[#ac8938] border-[#735F32] text-[#ffc261] flex items-center justify-center mx-1"
