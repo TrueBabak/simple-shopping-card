@@ -1,6 +1,13 @@
 import React from "react";
 
-const Product = ({ name, price, quantity, productId }) => {
+const Product = ({
+  name,
+  price,
+  quantity,
+  productId,
+  increment,
+  decrement,
+}) => {
   return (
     <div className="bg-[#282A3A] m-2 rounded-lg px-6 py-3 text-white flex">
       <div className="w-3/12 m-1 flex">
@@ -20,12 +27,15 @@ const Product = ({ name, price, quantity, productId }) => {
         <input type="text" />
       </div>
       <div className="w-1/12 m-1 flex">
-        <div className="w-7 h-7 rounded-lg border bg-[#7c6328] border-[#735F32] text-[#C69749] flex items-center justify-center mx-1">
+        <div
+          className="w-7 h-7 rounded-lg border bg-[#7c6328] border-[#735F32] text-[#C69749] flex items-center justify-center mx-1"
+          onClick={decrement}
+        >
           -
         </div>
         <div
           className="w-7 h-7 rounded-lg border bg-[#ac8938] border-[#735F32] text-[#ffc261] flex items-center justify-center mx-1"
-          onClick={productId}
+          onClick={increment}
         >
           +
         </div>
