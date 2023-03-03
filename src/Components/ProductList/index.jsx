@@ -16,13 +16,14 @@ const ProductList = ({ Products, setProducts }) => {
   const decrementHandler = (id) => {
     const customProducts = [...Products];
     const selectedProduct = customProducts.find((pro) => pro.id === id);
-    if (selectedProduct.quantity > 1) {
-      selectedProduct.quantity--;
+    if (selectedProduct.quantity === 1) {
+      const select = Products.filter((p) => p.id !== id);
+      setProducts(select);
     } else {
-      selectedProduct.quantity = 0;
-      removeHandler();
+      selectedProduct.quantity--;
+      setProducts(customProducts);
     }
-    setProducts(customProducts);
+    // setProducts(customProducts);
   };
   const removeHandler = (productId) => {
     const filteredProduct = Products.filter(
