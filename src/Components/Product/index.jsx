@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BsFillTrashFill } from "react-icons/bs";
-import { Context } from "../Context";
 
 const Product = ({ increment, decrement, remove, change, product }) => {
-  const { incrementHandler } = useContext(Context);
   return (
     <div className="bg-[#282A3A] m-2 rounded-lg px-6 py-3 text-white flex">
       <div className="w-3/12 m-1 flex">
