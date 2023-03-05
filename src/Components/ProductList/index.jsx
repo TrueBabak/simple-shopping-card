@@ -3,43 +3,14 @@ import { Context } from "../Context";
 import Product from "../Product";
 
 const ProductList = () => {
-  const { Products, setProducts } = useContext(Context);
-  const getId = () => {
-    // console.log("ff");
-  };
-  const incrementHandler = (id) => {
-    const TestProducts = [...Products];
-    const selectedProduct = TestProducts.find((pro) => pro.id === id);
-    selectedProduct.quantity++;
-    setProducts(TestProducts);
-    // selectedProduct.quantity++;
-    // console.log(Products.length);
-  };
-  const decrementHandler = (id) => {
-    const customProducts = [...Products];
-    const selectedProduct = customProducts.find((pro) => pro.id === id);
-    if (selectedProduct.quantity === 1) {
-      const select = Products.filter((p) => p.id !== id);
-      setProducts(select);
-    } else {
-      selectedProduct.quantity--;
-      setProducts(customProducts);
-    }
-    // setProducts(customProducts);
-  };
-  const removeHandler = (productId) => {
-    const filteredProduct = Products.filter(
-      (myProduct) => myProduct.id !== productId
-    );
-    setProducts(filteredProduct);
-  };
-  const changeHandler = (id, e) => {
-    const TestProducts = [...Products];
-    const selectedProduct = TestProducts.find((p) => p.id === id);
-    selectedProduct.name = e.target.value;
-    // console.log(selectedProduct);
-    setProducts(TestProducts);
-  };
+  const {
+    Products,
+    getId,
+    incrementHandler,
+    decrementHandler,
+    removeHandler,
+    changeHandler,
+  } = useContext(Context);
   return (
     <div className="bg-[#735F32] w-3/6 m-auto px-6 py-4 rounded-xl mt-4">
       {Products.length > 0 ? (
