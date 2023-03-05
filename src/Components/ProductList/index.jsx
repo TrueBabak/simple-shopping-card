@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../Context";
 import Product from "../Product";
 
-const ProductList = ({ Products, setProducts }) => {
+const ProductList = () => {
+  const { Products, setProducts } = useContext(Context);
   const getId = () => {
     // console.log("ff");
   };
