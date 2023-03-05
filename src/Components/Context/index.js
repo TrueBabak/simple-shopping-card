@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 const productList = [
-  { name: "React js", price: 120, quantity: 1, id: 1 },
-  { name: "Vue js", price: 220, quantity: 2, id: 2 },
-  { name: "Angular js", price: 180, quantity: 3, id: 3 },
+  { name: "React js", price: 120, quantity: 1, id: 1, key: 1 },
+  { name: "Vue js", price: 220, quantity: 2, id: 2, key: 2 },
+  { name: "Angular js", price: 180, quantity: 3, id: 3, key: 3 },
 ];
 // Contexts
 const ContextApi = {

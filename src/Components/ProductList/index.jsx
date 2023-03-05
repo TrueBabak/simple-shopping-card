@@ -21,6 +21,7 @@ const ProductList = () => {
             decrement={() => decrementHandler(product.id)}
             remove={() => removeHandler(product.id)}
             change={(e) => changeHandler(product.id, e)}
+            key={product.key}
           />
         ))
       ) : (
