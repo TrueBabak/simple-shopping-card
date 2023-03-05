@@ -9,10 +9,11 @@ const ProductList = () => {
     decrementHandler,
     removeHandler,
     changeHandler,
+    ProductLength,
   } = useContext(Context);
   return (
     <div className="bg-[#735F32] w-3/6 m-auto px-6 py-4 rounded-xl mt-4">
-      {Products.length > 0 ? (
+      {ProductLength > 0 ? (
         Products.map((product) => (
           <Product
             product={product}
