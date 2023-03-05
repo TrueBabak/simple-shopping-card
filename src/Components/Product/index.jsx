@@ -2,40 +2,41 @@ import React, { useContext } from "react";
 import { BsFillTrashFill } from "react-icons/bs";
 import { Context } from "../Context";
 
-const Product = ({
-  name,
-  price,
-  quantity,
-  increment,
-  decrement,
-  remove,
-  change,
-}) => {
+const Product = ({ increment, decrement, remove, change, product }) => {
   const { incrementHandler } = useContext(Context);
   return (
     <div className="bg-[#282A3A] m-2 rounded-lg px-6 py-3 text-white flex">
       <div className="w-3/12 m-1 flex">
         <p className="px-1">Course: </p>
-        <p className="px-1"> {name} </p>
+        <p className="px-1"> {product.name} </p>
       </div>
       <div className="w-3/12 m-1 flex">
         <p className="px-1">Price: </p>
-        <p className="px-1">{price}$</p>
+        <p className="px-1">{product.price}$</p>
       </div>
       <div className="w-1/12 m-1 flex text-[#C69749]">
         <p className="w-5 h-5 bg-[#735F32] flex justify-center items-center rounded-full p-3">
-          {quantity}
+          {product.quantity}
         </p>
       </div>
       <div className="w-3/12 m-1 flex text-black">
-        <input type="text" onChange={change} maxLength="10" value={name} />
+        <input
+          type="text"
+          onChange={change}
+          maxLength="10"
+          value={product.name}
+        />
       </div>
       <div className="w-1/12 m-1 flex">
         <div
           className="select-none cursor-pointer w-7 h-7 rounded-lg border bg-[#7c6328] border-[#735F32] text-[#C69749] flex items-center justify-center mx-1"
           onClick={decrement}
         >
-          {quantity === 1 ? <BsFillTrashFill className="text-red-500" /> : "-"}
+          {product.quantity === 1 ? (
+            <BsFillTrashFill className="text-red-500" />
+          ) : (
+            "-"
+          )}
         </div>
         <div
           className="select-none cursor-pointer w-7 h-7 rounded-lg border bg-[#ac8938] border-[#735F32] text-[#ffc261] flex items-center justify-center mx-1"

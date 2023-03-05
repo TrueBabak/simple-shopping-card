@@ -5,7 +5,6 @@ import Product from "../Product";
 const ProductList = () => {
   const {
     Products,
-    getId,
     incrementHandler,
     decrementHandler,
     removeHandler,
@@ -16,12 +15,7 @@ const ProductList = () => {
       {Products.length > 0 ? (
         Products.map((product) => (
           <Product
-            name={product.name}
-            price={product.price}
-            quantity={product.quantity}
-            productId={() => {
-              getId(product.id);
-            }}
+            product={product}
             increment={() => incrementHandler(product.id)}
             decrement={() => decrementHandler(product.id)}
             remove={() => removeHandler(product.id)}
