@@ -11,7 +11,7 @@ const ProductList = () => {
     shopItemLength,
   } = useContext(Context);
   return (
-    <div className="bg-[#735F32] w-7/12 m-auto px-6 py-4 rounded-xl mt-4">
+    <div className="bg-[#735F32] w-9/12 ml-10 px-6 py-4 rounded-xl mt-4">
       {shopItemLength > 0 ? (
         shopItem.map((item) => (
           <Product

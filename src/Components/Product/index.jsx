@@ -4,11 +4,15 @@ import { BsFillTrashFill } from "react-icons/bs";
 const Product = ({ increment, decrement, remove, item }) => {
   return (
     <div className="bg-[#282A3A] m-2 rounded-lg px-6 py-3 text-white flex">
-      <div className="w-4/12 m-1 flex">
+      <div className="w-3/12 m-1 flex">
         <p className="px-1">Course: </p>
         <p className="px-1"> {item.title} </p>
       </div>
-      <div className="w-3/12 m-1 flex">
+      <div className="w-2/12 m-1 flex">
+        <p className="px-1">Price: </p>
+        <p className="px-1 flex">{item.price}</p>
+      </div>
+      <div className="w-2/12 m-1 flex">
         <p className="px-1">Size: </p>
         <p className="px-1 flex">
           {item.availableSize.map((i) => {
@@ -16,7 +20,7 @@ const Product = ({ increment, decrement, remove, item }) => {
           })}
         </p>
       </div>
-      <div className="w-1/12 m-1 flex text-[#C69749]">
+      <div className="m-1 flex text-[#C69749]">
         <p className="w-5 h-5 bg-[#735F32] flex justify-center items-center rounded-full p-3">
           {item.quantity}
         </p>
