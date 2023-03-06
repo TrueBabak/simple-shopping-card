@@ -17,14 +17,6 @@ const Product = ({ increment, decrement, remove, change, product }) => {
           {product.quantity}
         </p>
       </div>
-      <div className="w-3/12 m-1 flex text-black">
-        <input
-          type="text"
-          onChange={change}
-          maxLength="10"
-          value={product.name}
-        />
-      </div>
       <div className="w-1/12 m-1 flex">
         <div
           className="select-none cursor-pointer w-7 h-7 rounded-lg border bg-[#7c6328] border-[#735F32] text-[#C69749] flex items-center justify-center mx-1"

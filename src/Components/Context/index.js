@@ -13,7 +13,6 @@ const ContextApi = {
   incrementHandler: () => {},
   decrementHandler: () => {},
   removeHandler: () => {},
-  changeHandler: () => {},
   offerHandler: () => {},
 };
 // Store
@@ -56,15 +55,6 @@ const ContextsProvider = ({ children }) => {
     setProducts(filteredProduct);
   };
 
-  // change title function with input text
-  const changeHandler = (id, e) => {
-    const TestProducts = [...Products];
-    const selectedProduct = TestProducts.find((p) => p.id === id);
-    selectedProduct.name = e.target.value;
-    // console.log(selectedProduct);
-    setProducts(TestProducts);
-  };
-
   // offer handler function
   const offerHandler = (Event) => {
     if (Event.target.value === "Golden") {
@@ -101,7 +91,6 @@ const ContextsProvider = ({ children }) => {
         incrementHandler,
         decrementHandler,
         removeHandler,
-        changeHandler,
         offerHandler,
         ProductLength,
       }}
