@@ -2,7 +2,7 @@
   Portfolio Website - v2.0<br/>
 </h2>
 <div align="center">
-  <img alt="Demo" src="./Images/Shoppingcard-image.png" />
+  <img alt="Demo" src="./Images/ProjectPreview.png />
 </div>
 
 <br/>
