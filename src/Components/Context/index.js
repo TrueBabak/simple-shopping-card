@@ -5,7 +5,6 @@ const ContextApi = {
   shopItemLength: ShopData.length,
   shopItem: [],
   setShopItem: () => {},
-  getId: () => {},
   incrementHandler: () => {},
   decrementHandler: () => {},
   removeHandler: () => {},
@@ -18,9 +17,6 @@ export const Context = createContext(ContextApi);
 const ContextsProvider = ({ children }) => {
   const [shopItem, setShopItem] = useState(ShopData);
   let shopItemLength = shopItem.length;
-  const getId = () => {
-    console.log("ff");
-  };
 
   // increment quantity function
   const incrementHandler = (id) => {
@@ -83,7 +79,6 @@ const ContextsProvider = ({ children }) => {
       value={{
         shopItem,
         setShopItem,
-        getId,
         incrementHandler,
         decrementHandler,
         removeHandler,

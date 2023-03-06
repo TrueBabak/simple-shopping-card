@@ -13,13 +13,13 @@ const ProductList = () => {
   return (
     <div className="bg-[#735F32] w-7/12 m-auto px-6 py-4 rounded-xl mt-4">
       {shopItemLength > 0 ? (
-        shopItem.map((product) => (
+        shopItem.map((item) => (
           <Product
-            product={product}
-            increment={() => incrementHandler(product.id)}
-            decrement={() => decrementHandler(product.id)}
-            remove={() => removeHandler(product.id)}
-            key={product.key}
+            item={item}
+            increment={() => incrementHandler(item.id)}
+            decrement={() => decrementHandler(item.id)}
+            remove={() => removeHandler(item.id)}
+            key={item.key}
           />
         ))
       ) : (
