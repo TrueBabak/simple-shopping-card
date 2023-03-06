@@ -8,6 +8,7 @@ export const ShopData = [
     availableSize: ["X", "L", "XL", "XXL"],
     price: 150,
     isFreeShopping: false,
+    key: 1,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const ShopData = [
     availableSize: ["X", "XL", "XXL"],
     price: 100,
     isFreeShopping: true,
+    key: 2,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const ShopData = [
     availableSize: ["X", "L", "XL"],
     price: 110,
     isFreeShopping: true,
+    key: 3,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const ShopData = [
     availableSize: ["X", "L", "XXL"],
     price: 70,
     isFreeShopping: false,
+    key: 4,
   },
   {
     id: 5,
@@ -48,5 +52,6 @@ export const ShopData = [
     availableSize: ["XL", "XXL"],
     price: 160,
     isFreeShopping: true,
+    key: 5,
   },
 ];

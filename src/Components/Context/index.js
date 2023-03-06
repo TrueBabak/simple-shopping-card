@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 import { ShopData } from "../Database";
 // Contexts
 const ContextApi = {
-  ProductLength: ShopData.length,
+  shopItemLength: ShopData.length,
   shopItem: [],
   setShopItem: () => {},
   getId: () => {},
@@ -17,7 +17,7 @@ export const Context = createContext(ContextApi);
 // Provider
 const ContextsProvider = ({ children }) => {
   const [shopItem, setShopItem] = useState(ShopData);
-  let ProductLength = shopItem.length;
+  let shopItemLength = shopItem.length;
   const getId = () => {
     console.log("ff");
   };
@@ -88,7 +88,7 @@ const ContextsProvider = ({ children }) => {
         decrementHandler,
         removeHandler,
         offerHandler,
-        ProductLength,
+        shopItemLength,
       }}
     >
       {children}
