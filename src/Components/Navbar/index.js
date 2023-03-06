@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../Context";
 
 const Navbar = () => {
-  const { offerHandler, shopItemLength } = useContext(Context);
+  const { offerHandler, shopItemLength, filterItem } = useContext(Context);
   return (
     <div className="bg-[#735F32] absolute w-1/6 right-0 top-0 m-4 px-6 py-4 rounded-xl">
       <div className="text-center text-white font-mono text-lg flex items-center justify-between">
@@ -18,6 +18,22 @@ const Navbar = () => {
           onChange={(e) => offerHandler(e)}
           placeholder="Enter your key..."
         />
+      </div>
+      <div className="mt-4 flex">
+        <p className="text-white">Filter by size:</p>
+        <select
+          onChange={(e) => filterItem(e)}
+          className="rounded-full px-2 py-1 text-xs mx-3"
+        >
+          <option value="All" defaultChecked>
+            All
+          </option>
+          <option value="S">S</option>
+          <option value="L">L</option>
+          <option value="X">X</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+        </select>
       </div>
     </div>
   );

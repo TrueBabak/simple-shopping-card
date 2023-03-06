@@ -9,9 +9,9 @@ const ContextApi = {
   decrementHandler: () => {},
   removeHandler: () => {},
   offerHandler: () => {},
+  filterItem: () => {},
 };
 // Store
-
 
 export const Context = createContext(ContextApi);
 
@@ -42,10 +42,8 @@ const ContextsProvider = ({ children }) => {
   };
 
   // remove product function
-  const removeHandler = (productId) => {
-    const filteredProduct = shopItem.filter(
-      (myProduct) => myProduct.id !== productId
-    );
+  const removeHandler = (id) => {
+    const filteredProduct = shopItem.filter((myProduct) => myProduct.id !== id);
     setShopItem(filteredProduct);
   };
 
@@ -76,6 +74,17 @@ const ContextsProvider = ({ children }) => {
       alert("True Key");
     }
   };
+  const filterItem = (e) => {
+    let customShopItem = [...ShopData];
+    const updateSHopItem = customShopItem.filter((item) => {
+      return item.availableSize.indexOf(e.target.value) >= 0;
+    });
+    setShopItem(updateSHopItem);
+    if (e.target.value === "All") {
+      console.log("All");
+      setShopItem(customShopItem);
+    }
+  };
   return (
     <Context.Provider
       value={{
@@ -86,6 +95,7 @@ const ContextsProvider = ({ children }) => {
         removeHandler,
         offerHandler,
         shopItemLength,
+        filterItem,
       }}
     >
       {children}
