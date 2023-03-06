@@ -4,19 +4,34 @@ import { ShopData } from "../Database";
 const ContextApi = {
   shopItemLength: ShopData.length,
   shopItem: [],
+  options: [],
   setShopItem: () => {},
   incrementHandler: () => {},
   decrementHandler: () => {},
   removeHandler: () => {},
   offerHandler: () => {},
   filterItem: () => {},
+  selectedOption: null,
+  setSelectedOption: () => {},
 };
 // Store
 
 export const Context = createContext(ContextApi);
+export const options = [
+  { value: "All", label: "All" },
+  { value: "S", label: "S" },
+  { value: "L", label: "L" },
+  { value: "X", label: "X" },
+  { value: "XL", label: "XL" },
+  { value: "XXL", label: "XXL" },
+];
 
 // Provider
 const ContextsProvider = ({ children }) => {
+  // for sizeavalble filter in navbar
+  const [selectedOption, setSelectedOption] = useState(null);
+  // ------------------------------------------------------------
+
   const [shopItem, setShopItem] = useState(ShopData);
   let shopItemLength = shopItem.length;
 
@@ -76,6 +91,7 @@ const ContextsProvider = ({ children }) => {
   };
   const filterItem = (e) => {
     let customShopItem = [...ShopData];
+    setSelectedOption(e.target.value);
     const updateSHopItem = customShopItem.filter((item) => {
       return item.availableSize.indexOf(e.target.value) >= 0;
     });
@@ -97,6 +113,9 @@ const ContextsProvider = ({ children }) => {
         offerHandler,
         shopItemLength,
         filterItem,
+        options,
+        selectedOption,
+        setSelectedOption,
       }}
     >
       {children}
