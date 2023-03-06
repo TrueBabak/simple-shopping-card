@@ -1,12 +1,12 @@
 import React from "react";
 import { BsFillTrashFill } from "react-icons/bs";
 
-const Product = ({ increment, decrement, remove, change, item }) => {
+const Product = ({ increment, decrement, remove, item }) => {
   return (
     <div className="bg-[#282A3A] m-2 rounded-lg px-6 py-3 text-white flex">
       <div className="w-4/12 m-1 flex">
         <p className="px-1">Course: </p>
-        <p className="px-1"> {item.name} </p>
+        <p className="px-1"> {item.title} </p>
       </div>
       <div className="w-2/12 m-1 flex">
         <p className="px-1">Price: </p>

@@ -11,6 +11,8 @@ const ContextApi = {
   offerHandler: () => {},
 };
 // Store
+
+
 export const Context = createContext(ContextApi);
 
 // Provider
