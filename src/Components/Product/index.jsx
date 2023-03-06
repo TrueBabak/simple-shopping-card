@@ -10,7 +10,12 @@ const Product = ({ increment, decrement, remove, item }) => {
       </div>
       <div className="w-2/12 m-1 flex">
         <p className="px-1">Price: </p>
-        <p className="px-1">{item.price}$</p>
+        <p className="px-1">
+          {item.availableSize.map((i) => {
+             return <p>{i}</p>;
+          })}
+          $
+        </p>
       </div>
       <div className="w-1/12 m-1 flex text-[#C69749]">
         <p className="w-5 h-5 bg-[#735F32] flex justify-center items-center rounded-full p-3">

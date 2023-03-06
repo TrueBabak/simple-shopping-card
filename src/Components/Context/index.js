@@ -79,6 +79,7 @@ const ContextsProvider = ({ children }) => {
     const updateSHopItem = customShopItem.filter((item) => {
       return item.availableSize.indexOf(e.target.value) >= 0;
     });
+    console.log(updateSHopItem);
     setShopItem(updateSHopItem);
     if (e.target.value === "All") {
       console.log("All");
