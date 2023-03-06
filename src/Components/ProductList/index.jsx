@@ -4,23 +4,21 @@ import Product from "../Product";
 
 const ProductList = () => {
   const {
-    Products,
+    shopItem,
     incrementHandler,
     decrementHandler,
     removeHandler,
-    changeHandler,
     ProductLength,
   } = useContext(Context);
   return (
     <div className="bg-[#735F32] w-4/6 m-auto px-6 py-4 rounded-xl mt-4">
       {ProductLength > 0 ? (
-        Products.map((product) => (
+        shopItem.map((product) => (
           <Product
             product={product}
             increment={() => incrementHandler(product.id)}
             decrement={() => decrementHandler(product.id)}
             remove={() => removeHandler(product.id)}
-            change={(e) => changeHandler(product.id, e)}
             key={product.key}
           />
         ))

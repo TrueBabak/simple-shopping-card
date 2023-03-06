@@ -1,13 +1,10 @@
 import { createContext, useState } from "react";
-const productList = [
-  { name: "React js", price: 120, quantity: 1, id: 1, key: 1 },
-  { name: "Vue js", price: 220, quantity: 2, id: 2, key: 2 },
-];
+import { ShopData } from "../Database";
 // Contexts
 const ContextApi = {
-  Products: [],
-  ProductLength: productList.length,
-  setProducts: () => {},
+  ProductLength: ShopData.length,
+  shopItem: [],
+  setShopItem: () => {},
   getId: () => {},
   incrementHandler: () => {},
   decrementHandler: () => {},
@@ -19,64 +16,64 @@ export const Context = createContext(ContextApi);
 
 // Provider
 const ContextsProvider = ({ children }) => {
-  const [Products, setProducts] = useState(productList);
-  let ProductLength = Products.length;
+  const [shopItem, setShopItem] = useState(ShopData);
+  let ProductLength = shopItem.length;
   const getId = () => {
     console.log("ff");
   };
 
   // increment quantity function
   const incrementHandler = (id) => {
-    const TestProducts = [...Products];
+    const TestProducts = [...shopItem];
     const selectedProduct = TestProducts.find((pro) => pro.id === id);
     selectedProduct.quantity++;
-    setProducts(TestProducts);
+    setShopItem(TestProducts);
   };
 
   // increment quantity function
   const decrementHandler = (id) => {
-    const customProducts = [...Products];
+    const customProducts = [...shopItem];
     const selectedProduct = customProducts.find((pro) => pro.id === id);
     if (selectedProduct.quantity === 1) {
-      const select = Products.filter((p) => p.id !== id);
-      setProducts(select);
+      const select = shopItem.filter((p) => p.id !== id);
+      setShopItem(select);
     } else {
       selectedProduct.quantity--;
-      setProducts(customProducts);
+      setShopItem(customProducts);
     }
   };
 
   // remove product function
   const removeHandler = (productId) => {
-    const filteredProduct = Products.filter(
+    const filteredProduct = shopItem.filter(
       (myProduct) => myProduct.id !== productId
     );
-    setProducts(filteredProduct);
+    setShopItem(filteredProduct);
   };
 
   // offer handler function
   const offerHandler = (Event) => {
     if (Event.target.value === "Golden") {
       console.log("True Key");
-      let myProducts = [...Products];
+      let myProducts = [...shopItem];
       myProducts.map((p) => (p.price = p.price / 2));
-      setProducts(myProducts);
+      setShopItem(myProducts);
       console.log(myProducts);
       alert("True Key");
     }
     if (Event.target.value === "Silver") {
       console.log("True Key");
-      let myProducts = [...Products];
+      let myProducts = [...shopItem];
       myProducts.map((p) => (p.price = p.price / 3));
-      setProducts(myProducts);
+      setShopItem(myProducts);
       console.log(myProducts);
       alert("True Key");
     }
     if (Event.target.value === "Bronze") {
       console.log("True Key");
-      let myProducts = [...Products];
+      let myProducts = [...shopItem];
       myProducts.map((p) => (p.price = p.price / 4));
-      setProducts(myProducts);
+      setShopItem(myProducts);
       console.log(myProducts);
       alert("True Key");
     }
@@ -84,8 +81,8 @@ const ContextsProvider = ({ children }) => {
   return (
     <Context.Provider
       value={{
-        Products,
-        setProducts,
+        shopItem,
+        setShopItem,
         getId,
         incrementHandler,
         decrementHandler,
