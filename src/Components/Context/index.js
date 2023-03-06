@@ -11,27 +11,14 @@ const ContextApi = {
   removeHandler: () => {},
   offerHandler: () => {},
   filterItem: () => {},
-  selectedOption: null,
-  setSelectedOption: () => {},
+  SortItem: () => {},
 };
 // Store
 
 export const Context = createContext(ContextApi);
-export const options = [
-  { value: "All", label: "All" },
-  { value: "S", label: "S" },
-  { value: "L", label: "L" },
-  { value: "X", label: "X" },
-  { value: "XL", label: "XL" },
-  { value: "XXL", label: "XXL" },
-];
 
 // Provider
 const ContextsProvider = ({ children }) => {
-  // for sizeavalble filter in navbar
-  const [selectedOption, setSelectedOption] = useState(null);
-  // ------------------------------------------------------------
-
   const [shopItem, setShopItem] = useState(ShopData);
   let shopItemLength = shopItem.length;
 
@@ -91,7 +78,6 @@ const ContextsProvider = ({ children }) => {
   };
   const filterItem = (e) => {
     let customShopItem = [...ShopData];
-    setSelectedOption(e.target.value);
     const updateSHopItem = customShopItem.filter((item) => {
       return item.availableSize.indexOf(e.target.value) >= 0;
     });
@@ -100,6 +86,36 @@ const ContextsProvider = ({ children }) => {
     if (e.target.value === "All") {
       console.log("All");
       setShopItem(customShopItem);
+    }
+  };
+  const SortItem = (e) => {
+    const cloneData = [...ShopData];
+    if (e.target.value === "Lowest") {
+      let sortedData = cloneData.sort((a, b) => {
+        if (a.price > b.price) {
+          return 1;
+        }
+        if (a.price < b.price) {
+          return -1;
+        }
+        return 0;
+      });
+      setShopItem(sortedData);
+    }
+    if (e.target.value === "Highest") {
+      let sortedData = cloneData.sort((a, b) => {
+        if (a.price < b.price) {
+          return 1;
+        }
+        if (a.price > b.price) {
+          return -1;
+        }
+        return 0;
+      });
+      setShopItem(sortedData);
+    }
+    if (e.target.value === "Defualt") {
+      setShopItem(cloneData);
     }
   };
   return (
@@ -113,9 +129,7 @@ const ContextsProvider = ({ children }) => {
         offerHandler,
         shopItemLength,
         filterItem,
-        options,
-        selectedOption,
-        setSelectedOption,
+        SortItem,
       }}
     >
       {children}
