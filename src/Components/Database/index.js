@@ -49,7 +49,7 @@ export const ShopData = [
     title: "sphynx knife day grey t-shirt",
     quantity: 6,
     description: "sphynx tie day grey",
-    availableSize: ["XL", "XXL"],
+    availableSize: ["XL", "XXL", "S"],
     price: 160,
     isFreeShopping: true,
     key: 5,

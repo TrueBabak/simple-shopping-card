@@ -37,7 +37,7 @@ const Navbar = () => {
         </select>
       </div>
       <div className="mt-4 flex">
-        <p className="text-white">Sord item by price:</p>
+        <p className="text-white">Sort item by price:</p>
         <select
           onChange={(e) => SortItem(e)}
           className="rounded-full px-2 py-1 text-xs mx-3"
