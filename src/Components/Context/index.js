@@ -52,27 +52,21 @@ const ContextsProvider = ({ children }) => {
   // offer handler function
   const offerHandler = (Event) => {
     if (Event.target.value === "Golden") {
-      console.log("True Key");
       let myProducts = [...shopItem];
       myProducts.map((p) => (p.price = p.price / 2));
       setShopItem(myProducts);
-      console.log(myProducts);
       alert("True Key");
     }
     if (Event.target.value === "Silver") {
-      console.log("True Key");
       let myProducts = [...shopItem];
       myProducts.map((p) => (p.price = p.price / 3));
       setShopItem(myProducts);
-      console.log(myProducts);
       alert("True Key");
     }
     if (Event.target.value === "Bronze") {
-      console.log("True Key");
       let myProducts = [...shopItem];
       myProducts.map((p) => (p.price = p.price / 4));
       setShopItem(myProducts);
-      console.log(myProducts);
       alert("True Key");
     }
   };
@@ -81,10 +75,8 @@ const ContextsProvider = ({ children }) => {
     const updateSHopItem = customShopItem.filter((item) => {
       return item.availableSize.indexOf(e.target.value) >= 0;
     });
-    console.log(updateSHopItem);
     setShopItem(updateSHopItem);
     if (e.target.value === "All") {
-      console.log("All");
       setShopItem(customShopItem);
     }
   };
