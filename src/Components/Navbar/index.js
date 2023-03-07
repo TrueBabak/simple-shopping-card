@@ -1,9 +1,23 @@
 import React, { useContext } from "react";
+import SelectComponent from "../../Common/Select";
 import { Context } from "../Context";
 
 const Navbar = () => {
   const { offerHandler, shopItemLength, filterItem, SortItem } =
     useContext(Context);
+  const sizeObject = [
+    { name: "All", value: "All" },
+    { name: "S", value: "S" },
+    { name: "L", value: "L" },
+    { name: "X", value: "X" },
+    { name: "XL", value: "XL" },
+    { name: "XXl", value: "XXL" },
+  ];
+  const priceSort = [
+    { name: "Defualt", value: "Defualt" },
+    { name: "Highest", value: "Highest" },
+    { name: "Lowest", value: "Lowest" },
+  ];
   return (
     <div className="bg-[#735F32] absolute w-1/6 right-0 top-0 m-4 px-6 py-4 rounded-xl">
       <div className="text-center text-white font-mono text-lg flex items-center justify-between">
@@ -20,35 +34,16 @@ const Navbar = () => {
           placeholder="Enter your key..."
         />
       </div>
-      <div className="mt-4 flex">
-        <p className="text-white">Filter by size:</p>
-        <select
-          onChange={(e) => filterItem(e)}
-          className="rounded-full px-2 py-1 text-xs mx-3"
-        >
-          <option value="All" defaultChecked>
-            All
-          </option>
-          <option value="S">S</option>
-          <option value="L">L</option>
-          <option value="X">X</option>
-          <option value="XL">XL</option>
-          <option value="XXL">XXL</option>
-        </select>
-      </div>
-      <div className="mt-4 flex">
-        <p className="text-white">Sort item by price:</p>
-        <select
-          onChange={(e) => SortItem(e)}
-          className="rounded-full px-2 py-1 text-xs mx-3"
-        >
-          <option value="Defualt" defaultChecked>
-            Defualt
-          </option>
-          <option value="Highest">Highest</option>
-          <option value="Lowest">Lowest</option>
-        </select>
-      </div>
+      <SelectComponent
+        title="Filter by size:"
+        Main={sizeObject}
+        Handler={filterItem}
+      />
+      <SelectComponent
+        title="Sort item by price:"
+        Main={priceSort}
+        Handler={SortItem}
+      />
     </div>
   );
 };
