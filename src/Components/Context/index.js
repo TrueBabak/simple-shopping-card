@@ -74,7 +74,6 @@ const ContextsProvider = ({ children }) => {
   };
   const SortItem = (e) => {
     setShopItem(FilteredItem);
-    console.log(FilteredItem);
     const cloneData = [...FilteredItem];
     if (e.target.value === "Lowest") {
       let sortedData = cloneData.sort((a, b) => {
