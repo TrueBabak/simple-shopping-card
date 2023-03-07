@@ -2,7 +2,7 @@ export const ShopData = [
   {
     id: 1,
     sku: 123456789104,
-    title: "sphynx tie day grey shirt",
+    title: "green shirt",
     quantity: 19,
     description: "sphynx tie day grey",
     availableSize: ["X", "L", "XL"],
@@ -13,7 +13,7 @@ export const ShopData = [
   {
     id: 2,
     sku: 123456789103,
-    title: "sphynx tie day grey ",
+    title: "blue shirt",
     quantity: 10,
     description: "sphynx tie day grey",
     availableSize: ["X", "XL", "XXL"],
@@ -24,7 +24,7 @@ export const ShopData = [
   {
     id: 3,
     sku: 123456789102,
-    title: "danger tie day grey t-shirt",
+    title: "red shirt",
     quantity: 1,
     description: "sphynx tie day grey",
     availableSize: ["X", "L", "XL"],
@@ -35,7 +35,7 @@ export const ShopData = [
   {
     id: 4,
     sku: 123456789101,
-    title: "scarf tie day grey t-shirt",
+    title: "white shirt",
     quantity: 4,
     description: "sphynx tie day grey",
     availableSize: ["X", "L"],
@@ -46,7 +46,7 @@ export const ShopData = [
   {
     id: 5,
     sku: 1234567891,
-    title: "sphynx knife day grey t-shirt",
+    title: "black shirt",
     quantity: 6,
     description: "sphynx tie day grey",
     availableSize: ["XL", "XXL", "S"],
