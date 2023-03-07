@@ -4,8 +4,9 @@ import { ShopData } from "../Database";
 const ContextApi = {
   shopItemLength: ShopData.length,
   shopItem: [],
-  options: [],
   setShopItem: () => {},
+  FilteredItem: [],
+  setFilteredItem: () => {},
   incrementHandler: () => {},
   decrementHandler: () => {},
   removeHandler: () => {},
@@ -20,6 +21,7 @@ export const Context = createContext(ContextApi);
 // Provider
 const ContextsProvider = ({ children }) => {
   const [shopItem, setShopItem] = useState(ShopData);
+  const [FilteredItem, setFilteredItem] = useState(ShopData);
   let shopItemLength = shopItem.length;
 
   // increment quantity function
@@ -75,13 +77,17 @@ const ContextsProvider = ({ children }) => {
     const updateSHopItem = customShopItem.filter((item) => {
       return item.availableSize.indexOf(e.target.value) >= 0;
     });
+    setFilteredItem(updateSHopItem);
     setShopItem(updateSHopItem);
     if (e.target.value === "All") {
       setShopItem(customShopItem);
+      setFilteredItem(customShopItem);
     }
   };
   const SortItem = (e) => {
-    const cloneData = [...ShopData];
+    setShopItem(FilteredItem);
+    console.log(FilteredItem);
+    const cloneData = [...FilteredItem];
     if (e.target.value === "Lowest") {
       let sortedData = cloneData.sort((a, b) => {
         if (a.price > b.price) {
@@ -122,6 +128,8 @@ const ContextsProvider = ({ children }) => {
         shopItemLength,
         filterItem,
         SortItem,
+        FilteredItem,
+        setFilteredItem,
       }}
     >
       {children}
