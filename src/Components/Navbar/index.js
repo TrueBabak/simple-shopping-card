@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Offer from "../../Common/Offer";
 import SelectComponent from "../../Common/Select";
 import { Context } from "../Context";
 
@@ -19,14 +20,7 @@ const Navbar = () => {
           {shopItemLength}
         </div>
       </div>
-      <div className="mt-4">
-        <input
-          className="bg-[#282A3A] placeholder:text-gray-500 w-full px-2 py-1 rounded-lg outline-0 text-white"
-          type="text"
-          onChange={(e) => offerHandler(e)}
-          placeholder="Enter your key..."
-        />
-      </div>
+      <Offer Handler={offerHandler} />
       <SelectComponent
         title="Filter by size:"
         Main={sizeObject}
