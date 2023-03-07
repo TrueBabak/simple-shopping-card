@@ -55,3 +55,17 @@ export const ShopData = [
     key: 5,
   },
 ];
+export const sizeObject = [
+  { name: "All", value: "All" },
+  { name: "S", value: "S" },
+  { name: "L", value: "L" },
+  { name: "X", value: "X" },
+  { name: "XL", value: "XL" },
+  { name: "XXl", value: "XXL" },
+];
+export const priceSort = [
+  { name: "Defualt", value: "Defualt" },
+  { name: "Highest", value: "Highest" },
+  { name: "Lowest", value: "Lowest" },
+];
+export const shopItemLength = ShopData.length;

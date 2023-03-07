@@ -1,40 +1,16 @@
 import { createContext, useState } from "react";
 import { ShopData } from "../Database";
+import { ContextApi } from "./ContextItem";
 // Contexts
-const ContextApi = {
-  shopItemLength: ShopData.length,
-  shopItem: [],
-  setShopItem: () => {},
-  FilteredItem: [],
-  setFilteredItem: () => {},
-  incrementHandler: () => {},
-  decrementHandler: () => {},
-  removeHandler: () => {},
-  offerHandler: () => {},
-  filterItem: () => {},
-  SortItem: () => {},
-};
+
 // Store
-const sizeObject = [
-  { name: "All", value: "All" },
-  { name: "S", value: "S" },
-  { name: "L", value: "L" },
-  { name: "X", value: "X" },
-  { name: "XL", value: "XL" },
-  { name: "XXl", value: "XXL" },
-];
-const priceSort = [
-  { name: "Defualt", value: "Defualt" },
-  { name: "Highest", value: "Highest" },
-  { name: "Lowest", value: "Lowest" },
-];
+
 export const Context = createContext(ContextApi);
 
 // Provider
 const ContextsProvider = ({ children }) => {
   const [shopItem, setShopItem] = useState(ShopData);
   const [FilteredItem, setFilteredItem] = useState(ShopData);
-  let shopItemLength = shopItem.length;
 
   // increment quantity function
   const incrementHandler = (id) => {
@@ -137,13 +113,10 @@ const ContextsProvider = ({ children }) => {
         decrementHandler,
         removeHandler,
         offerHandler,
-        shopItemLength,
         filterItem,
         SortItem,
         FilteredItem,
         setFilteredItem,
-        sizeObject,
-        priceSort,
       }}
     >
       {children}
