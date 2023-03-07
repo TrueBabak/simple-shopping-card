@@ -68,4 +68,4 @@ export const priceSort = [
   { name: "Highest", value: "Highest" },
   { name: "Lowest", value: "Lowest" },
 ];
-export const shopItemLength = ShopData.length;
+export let shopItemLength = ShopData.length;

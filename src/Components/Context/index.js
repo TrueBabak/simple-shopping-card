@@ -11,6 +11,7 @@ export const Context = createContext(ContextApi);
 const ContextsProvider = ({ children }) => {
   const [shopItem, setShopItem] = useState(ShopData);
   const [FilteredItem, setFilteredItem] = useState(ShopData);
+  let shopItemLength = shopItem.length;
 
   // increment quantity function
   const incrementHandler = (id) => {
@@ -106,6 +107,7 @@ const ContextsProvider = ({ children }) => {
   return (
     <Context.Provider
       value={{
+        shopItemLength,
         shopItem,
         setShopItem,
         incrementHandler,

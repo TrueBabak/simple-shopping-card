@@ -1,4 +1,7 @@
+import { ShopData } from "../Database";
+
 export const ContextApi = {
+  shopItemLength: ShopData.length,
   shopItem: [],
   setShopItem: () => {},
   FilteredItem: [],
